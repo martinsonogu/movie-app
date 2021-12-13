@@ -1,0 +1,23 @@
+import React, { Component } from 'react';
+import {Link} from "react-router-dom"
+
+class MovieCard extends Component {
+    render() { 
+        const {movie} = this.props
+        return ( 
+            <div className="col-md-3 mb-5">
+                <div className="card card-body bg-dark tect-center h-100">
+                    <img className="w-100 mb-4" src={movie.Poster} alt="Movie Cover"  />
+                    <h5 className="text-light card-title">{movie.Title} - {movie.Year}</h5>
+                    <Link className="btn btn-info" to={"/movie/" + movie.imdbID} >
+                        Details..
+                         <i className="fas fa-chevron-right" />
+                    </Link>
+                </div>
+
+            </div>
+        );
+    }
+}
+ 
+export default MovieCard;
